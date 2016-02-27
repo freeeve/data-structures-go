@@ -17,3 +17,7 @@ func (s *Stack) Pop() (int, bool) {
 func (s *Stack) Peek() (int, bool) {
 	return 0, false
 }
+
+func (s *Stack) IsEmpty() bool {
+	return false
+}

@@ -30,3 +30,10 @@ func (s *Stack) Peek() (int, bool) {
 	val := s.array[len(s.array)-1]
 	return val, true
 }
+
+func (s *Stack) IsEmpty() bool {
+	if len(s.array) == 0 {
+		return true
+	}
+	return false
+}

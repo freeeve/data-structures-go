@@ -51,3 +51,16 @@ func (s *StackSuite) TestPeekEmpty(c *C) {
 func (s *StackSuite) TestLeak(c *C) {
 
 }
+
+func (s *StackSuite) TestIsEmpty(c *C) {
+	stack := NewStack()
+	empty := stack.IsEmpty()
+	c.Assert(empty, Equals, true)
+}
+
+func (s *StackSuite) TestIsEmptyFalse(c *C) {
+	stack := NewStack()
+	stack.Push(123)
+	empty := stack.IsEmpty()
+	c.Assert(empty, Equals, false)
+}
