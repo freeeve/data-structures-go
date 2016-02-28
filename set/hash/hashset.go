@@ -11,6 +11,7 @@ type hashSet struct {
 }
 
 func NewHashSet() *hashSet {
+	return nil
 }
 
 func (s *hashSet) Add(val int) bool {
