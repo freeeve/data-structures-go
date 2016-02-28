@@ -1,4 +1,4 @@
-package main
+package queue
 
 import (
 	"testing"
@@ -12,6 +12,10 @@ func Test(t *testing.T) { TestingT(t) }
 type QueueSuite struct{}
 
 var _ = Suite(&QueueSuite{})
+
+func (s *QueueSuite) TestInterface(c *C) {
+	var _ Queue = NewQueue()
+}
 
 func (s *QueueSuite) TestEnqueue(c *C) {
 	queue := NewQueue()

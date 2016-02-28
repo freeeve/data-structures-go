@@ -1,20 +1,20 @@
-package main
+package queue
 
-type Queue struct {
+type queue struct {
 	array []int
 }
 
-func NewQueue() Queue {
-	q := Queue{}
+func NewQueue() *queue {
+	q := queue{}
 	q.array = []int{}
-	return s
+	return &q
 }
 
-func (s *Queue) Enqueue(val int) {
+func (q *queue) Enqueue(val int) {
 	q.array = append(q.array, val)
 }
 
-func (s *Queue) Dequeue() (int, bool) {
+func (q *queue) Dequeue() (int, bool) {
 	if len(q.array) == 0 {
 		return 0, false
 	}
@@ -23,7 +23,7 @@ func (s *Queue) Dequeue() (int, bool) {
 	return val, true
 }
 
-func (s *Queue) Peek() (int, bool) {
+func (q *queue) Peek() (int, bool) {
 	if len(q.array) == 0 {
 		return 0, false
 	}
@@ -31,7 +31,7 @@ func (s *Queue) Peek() (int, bool) {
 	return val, true
 }
 
-func (s *Queue) IsEmpty() bool {
+func (q *queue) IsEmpty() bool {
 	if len(q.array) == 0 {
 		return true
 	}
